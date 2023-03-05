@@ -1,8 +1,8 @@
 # div
 A Divination Machine
-Version: Alpha 1.0.0
-December 21st, 2022
-Copyright 2022 act
+Version: Alpha 1.1.0
+March 5th, 2023
+Copyright 2022-2023 act
 https://github.com/act17/div
 
 # Purpose
@@ -28,6 +28,8 @@ https://github.com/act17/div
   - Fix any bugs or similar that may become apparent post-release.
 
 # Changelog
+  *Beta 1.1.0 (March 5th, 2023)*
+  - Altered ``./sources/tarottools/tarotgen.c`` to not generate the same seed upon the first card.
 
   *Alpha 1.0.0 (December 21st, 2022)*
   - Added ``main.c``, which takes the user input and subsequently calls macros to calculate and print.
