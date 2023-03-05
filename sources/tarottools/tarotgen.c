@@ -13,7 +13,7 @@ void TarotGenerator(int *Cards, int *Decks, unsigned int QueryNumeric,
     // Then we set the random seed - equal to the time,
     // multiplied by the Query's Numeric value, which in
     // itself is multiplied by i.
-    srand(time(0) * (QueryNumeric * i));
+    srand(time(0) * (QueryNumeric * (i + 1)));
 
     // First we see the deck.
     // If zero, it's the major archana.
