@@ -100,7 +100,7 @@ void TarotPrint(int *Cards, int *Decks, int *Options) {
     // upright then we flip a coint to see if we'll reverse the card in print:
     if (ForceUpright == 0) {
 
-      srand(time(0) * i);
+      srand(time(0) * (i + 1));
 
       if (rand() % 7 == 1)
         printf("  (Reversed)");
