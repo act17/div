@@ -1,9 +1,7 @@
 # div
 A Divination Machine
 
-Version: Alpha 1.3.0
-
-April 10th, 2023
+Version: Alpha 1.4.0  ||  2023/04/10
 
 Copyright 2022-2023 act
 
@@ -36,6 +34,14 @@ https://github.com/act17/div
   - Fix any bugs or similar that may become apparent post-release.
 
 # Changelog
+
+  *Alpha 1.4.0 (April 10th, 2023)*
+  - Altered ``./Makefile`` to now include a new target; ``debug``. It compiles the program with the ``-g`` flag.
+  - Altered ``./src/main.c`` to no longer handle the parsing of arguments, and moved ``HelpPrint()`` to another file. As a result, the function is now far more condensed.
+  - Added new file ``./src/argparse.c``. It includes the function ``char* ArgumentParser(char** Arguments, int* Options)``. It performs the argument parsing that used to be handled in ``int main()``. ``HelpPrint()`` has also been moved to this file.
+  - Altered ``./src/tarot/gematria.c`` to now correct Gematria flaws. I was an idiot and failed to initialize the several usages of Integers to zero; leading to the obvious errors. Code has also been condensed for readability.
+  - Moved ``./src/tarot/tarot.h`` to ``./src/``, and renamed it to ``div.h``. The contents of the files have now been altered to reflect this change, and has added ``ArgumentParser()``.
+
 
   *Alpha 1.3.0 (April 10th, 2023)*
   - Changed directory ``./sources/`` to ``./src/``.
