@@ -37,7 +37,7 @@ https://github.com/act17/div
 
 # Changelog
 
-  *Alpha 1.3.0 (April 6th, 2023)*
+  *Alpha 1.3.0 (April 10th, 2023)*
   - Changed directory ``./sources/`` to ``./src/``.
     - Changed directory ``./src/tarottools/`` to ``./src/tarot/``.
     - Changed file name ``./src/tarot/tarottools.h`` to ``./src/tarot/tarot.h``.
