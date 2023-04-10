@@ -1,15 +1,22 @@
 # div
 A Divination Machine
-Version: Alpha 1.2.0
-March 31st, 2023
+
+Version: Alpha 1.3.0
+
+April 10th, 2023
+
 Copyright 2022-2023 act
+
 https://github.com/act17/div
+
 
 # Purpose
   The purpose of this program is as a novelty. It provides divination by way of randomly selecting tarot cards.
 
+
 # Compiling
   To compile the program, simply run ``make`` to compile the program. By default, the Makefile uses GCC to compile the program.
+
 
 # Use
   To use the program, simply run it by running ``./div`` with a query following it. By default, it will return three cards based on your query.
@@ -18,8 +25,9 @@ https://github.com/act17/div
 
   As for options, the current version has the following:
   ``--help`` - This prints out a message that details the commands, and the format for using the program.
-  ``-c _`` - This changes the number of cards you would like to be returned to you. ``_`` should be replaced with an integer equal to the value of the cards you'd like returned.
-  ``-u`` - This forces all cards to be upright.
+  ``-c`` - This changes the number of cards you would like to be returned to you.
+  ``-g`` - Changes the form of Gematria used.
+
 
 # Todo
   By Beta 1.0.0, the following should be done:
@@ -29,11 +37,27 @@ https://github.com/act17/div
 
 # Changelog
 
+  *Alpha 1.3.0 (April 6th, 2023)*
+  - Changed directory ``./sources/`` to ``./src/``.
+    - Changed directory ``./src/tarottools/`` to ``./src/tarot/``.
+    - Changed file name ``./src/tarot/tarottools.h`` to ``./src/tarot/tarot.h``.
+  - Added file ``./src/tarot/gematria.c``. It includes the functions ``int Gematria(char *Query, int Type)``, ``int ASCIIGematria(char *Query)``, and ``int EnglishGematria(char *Query, int Type)``.
+    - These basically handle how the program converts a query into a number. Previously it just used the ASCII character of each character in the Query. Although that's still possible by using the ``-g`` parameter, by-default it uses the English method.
+  - Changed how ``./src/main.c`` handles parsing arguments. It now uses a ``switch()`` statement.
+  - (Almost all) references to options - e.g. the former use of ``int CardNumber`` in ``int main()`` have now been simply condensed into ``int *Options``.
+  - The argument ``-u`` has been depricated.
+  - The argument ``-g`` has now been added; it changes the type of Gematria used.
+  - ``main.c`` now includes the function ``void HelpPrint()``. It simply prints the help message.
+  - Altered ``./Makefile`` heavily. It's entirely revamped for ease of future use, and now includes formatting options via ``astyle``.
+
+
   *Alpha 1.2.0 (March 31st, 2023)*
   - Altered ``./sources/tarottools/tarotprint.c`` to no longer use a singular seed to generate reversed cards; preventing garunteed reverses.
 
+
   *Alpha 1.1.0 (March 5th, 2023)*
   - Altered ``./sources/tarottools/tarotgen.c`` to not generate the same seed upon the first card.
+
 
   *Alpha 1.0.0 (December 21st, 2022)*
   - Added ``main.c``, which takes the user input and subsequently calls macros to calculate and print.
